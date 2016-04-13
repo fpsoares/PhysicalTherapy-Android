@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="edu.fau.warren.ch24_25fragment.FragmentActivity">
+    tools:context="edu.fau.group10.physicaltherapy_android.FragmentActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

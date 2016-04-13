@@ -1,7 +1,7 @@
-package edu.fau.warren.ch24_25fragment;
+package edu.fau.group10.physicaltherapy_android;
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,14 +9,14 @@ import android.view.ViewGroup;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class FragmentActivityFragment2 extends Fragment {
+public class FragmentActivityFragment extends Fragment {
 
-    public FragmentActivityFragment2() {
+    public FragmentActivityFragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_fragment2, container, false);
+        return inflater.inflate(R.layout.fragment_fragment, container, false);
     }
 }
