@@ -28,10 +28,12 @@ public class API {
     //String BASE_URL = "http://10.0.2.2:5000/";
     String BASE_URL = "http://162.252.122.230:3010/api/";
 
+    // TODO: 4/26/2016 figure out why this code is complaining about empty method, REST Tutorial does not complain about code 
     @GET("ApiUser") Call<List<ApiUser>> getUsers();
 
     @GET("ApiExercises") Call<List<ApiExercises>> getExercises();
 
+    // TODO: 4/26/2016 Create sets model from JSON output, also provider company and @POST for log 
     @GET("sets") Call<List<ApiExercises>> getExercises();
 
     @GET("user?firstName={firstName}") Call<User> getUser(@Path("firstName") String firstName);

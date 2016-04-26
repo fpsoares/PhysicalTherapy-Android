@@ -41,7 +41,7 @@ public class ExerciseContent {
     public ExerciseContent() {
         exercise_ids = API.getExercises(exercise_ids).enqueue(new Callback<List<Exercise>>);
     }
-
+// TODO: 4/26/2016 finish with object loading from list in server SEE CH 35.6 in Android book 
     exerciseAPI = API.Factory.getInstance(mContext);
 
     exerciseAPI
