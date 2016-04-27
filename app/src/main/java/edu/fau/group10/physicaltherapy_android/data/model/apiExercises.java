@@ -15,7 +15,7 @@ public class ApiExercises {
     public String Id;
     @SerializedName("exercise_id")
     @Expose
-    public int exerciseId;
+    public String exerciseId;
     @SerializedName("name")
     @Expose
     public String name;
@@ -31,9 +31,9 @@ public class ApiExercises {
 
     @Override
     public String toString() {
-        return "apiexercises{" +
+        return "ApiExercises{" +
                 "Id='" + Id + '\'' +
-                ", exerciseId=" + exerciseId +
+                ", exerciseId='" + exerciseId + '\'' +
                 ", name='" + name + '\'' +
                 ", baseUrl='" + baseUrl + '\'' +
                 ", url='" + url + '\'' +

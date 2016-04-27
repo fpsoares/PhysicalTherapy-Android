@@ -34,7 +34,7 @@ public class ApiUser {
 
     @Override
     public String toString() {
-        return "apiuser{" +
+        return "ApiUser{" +
                 "Id='" + Id + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +

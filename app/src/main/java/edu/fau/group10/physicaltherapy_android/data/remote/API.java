@@ -2,10 +2,12 @@ package edu.fau.group10.physicaltherapy_android.data.remote;
 
 import android.content.Context;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import edu.fau.group10.physicaltherapy_android.BuildConfig;
-import edu.fau.group10.physicaltherapy_android.Exercise.ExerciseContent;
 import edu.fau.group10.physicaltherapy_android.data.model.ApiExercises;
+import edu.fau.group10.physicaltherapy_android.data.model.ApiProvider;
+import edu.fau.group10.physicaltherapy_android.data.model.ApiSets;
 import edu.fau.group10.physicaltherapy_android.data.model.ApiUser;
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
@@ -26,21 +28,49 @@ import retrofit2.http.Path;
 public class API {
 
     //String BASE_URL = "http://10.0.2.2:5000/";
-    String BASE_URL = "http://162.252.122.230:3010/api/";
+    //String BASE_URL = "http://162.252.122.230:3010/api/";
+    String BASE_URL = "http://192.168.5.10:3000/api/";
 
-    // TODO: 4/26/2016 figure out why this code is complaining about empty method, REST Tutorial does not complain about code 
-    @GET("ApiUser") Call<List<ApiUser>> getUsers();
+    // TODO: 4/26/2016 figure out why this code is complaining about empty method, REST Tutorial does not complain about code
 
-    @GET("ApiExercises") Call<List<ApiExercises>> getExercises();
+    @GET("ApiUser")
+    public static Call<List<ApiUser>> getUsers() {
+        return null;
+    }
+
+    @GET("ApiExercises")
+    public static Call<List<ApiExercises>> getExercises(List<Integer> exercise_ids) {
+        return null;
+    }
 
     // TODO: 4/26/2016 Create sets model from JSON output, also provider company and @POST for log 
-    @GET("sets") Call<List<ApiExercises>> getExercises();
+    @GET("set")
+    public static Call<ApiSets> getSet() {
+        return null;
+    }
 
-    @GET("user?firstName={firstName}") Call<User> getUser(@Path("firstName") String firstName);
+    @GET("provider")
+    public static Call<ApiProvider> getProvider() {
+        return null;
+    }
 
-    @DELETE("user?firstName={firstName}") Call<Object> deleteUser(@Path("firstName") String firstName);
+    @FormUrlEncoded
+    @POST("logs")
+    public Call<Object> createLogEntry(@Field("vista_id") String vista_id, @Field("exercise_id") String exercise_id, @Field("date_time") String date_time, @Field("elapsed_time") String elapsed_time) {
+        return null;
+    }
 
-    @FormUrlEncoded @POST("user") Call<Object> createUser(@Field("email") String email, @Field("firstName") String name);
+    @GET("user?firstName={firstName}")
+    public Call<ApiUser> getUser(@Path("firstName") String firstName) {
+        return null;
+    }
+
+    @DELETE("user?firstName={firstName}")
+    Call<Object> deleteUser(@Path("firstName") String firstName) {
+        return null;
+    }
+
+    /*@FormUrlEncoded @POST("user") Call<Object> createUser(@Field("email") String email, @Field("firstName") String name);*/
 
     public class Factory {
         private API service;

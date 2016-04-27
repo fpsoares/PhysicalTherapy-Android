@@ -1,4 +1,4 @@
-package edu.fau.group10.physicaltherapy_android.utils;
+package edu.fau.group10.physicaltherapy_android;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
