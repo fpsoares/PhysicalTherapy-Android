@@ -25,7 +25,7 @@ import retrofit2.http.Path;
 /**
  * Created by felipe on 4/25/2016.
  */
-public class API {
+public interface API {
 
     //String BASE_URL = "http://10.0.2.2:5000/";
     //String BASE_URL = "http://162.252.122.230:3010/api/";
@@ -33,47 +33,25 @@ public class API {
 
     // TODO: 4/26/2016 figure out why this code is complaining about empty method, REST Tutorial does not complain about code
 
-    @GET("ApiUser")
-    public static Call<List<ApiUser>> getUsers() {
-        return null;
-    }
+    @GET("ApiUser") Call<List<ApiUser>> getUsers();
 
-    @GET("ApiExercises")
-    public static Call<List<ApiExercises>> getExercises(List<Integer> exercise_ids) {
-        return null;
-    }
+    @GET("ApiExercises") Call<List<ApiExercises>> getExercises(List<Integer> exercise_ids);
 
     // TODO: 4/26/2016 Create sets model from JSON output, also provider company and @POST for log 
-    @GET("set")
-    public static Call<ApiSets> getSet() {
-        return null;
-    }
+    @GET("set") Call<ApiSets> getSet();
 
-    @GET("provider")
-    public static Call<ApiProvider> getProvider() {
-        return null;
-    }
+    @GET("provider") Call<ApiProvider> getProvider();
 
-    @FormUrlEncoded
-    @POST("logs")
-    public Call<Object> createLogEntry(@Field("vista_id") String vista_id, @Field("exercise_id") String exercise_id, @Field("date_time") String date_time, @Field("elapsed_time") String elapsed_time) {
-        return null;
-    }
+    @FormUrlEncoded @POST("logs") Call<Object> createLogEntry(@Field("vista_id") String vista_id, @Field("exercise_id") String exercise_id, @Field("date_time") String date_time, @Field("elapsed_time") String elapsed_time);
 
-    @GET("user?firstName={firstName}")
-    public Call<ApiUser> getUser(@Path("firstName") String firstName) {
-        return null;
-    }
+    @GET("user?firstName={firstName}") Call<ApiUser> getUser(@Path("firstName") String firstName);
 
-    @DELETE("user?firstName={firstName}")
-    Call<Object> deleteUser(@Path("firstName") String firstName) {
-        return null;
-    }
+    @DELETE("user?firstName={firstName}") Call<Object> deleteUser(@Path("firstName") String firstName);
 
     /*@FormUrlEncoded @POST("user") Call<Object> createUser(@Field("email") String email, @Field("firstName") String name);*/
 
-    public class Factory {
-        private API service;
+    class Factory {
+        private static API service;
 
         public static API getInstance(Context context) {
             if (service == null) {

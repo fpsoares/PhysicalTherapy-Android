@@ -19,17 +19,16 @@
             android:name=".activities.LoginActivity"
             android:label="@string/title_activity_login" />
         <activity
-            android:name=".activities.ExerciseListActivity"
-            android:label="@string/title_exercise_list" />
-        <activity
-            android:name=".activities.ExerciseDetailActivity"
-            android:label="@string/title_exercise_detail"
-            android:parentActivityName=".activities.ExerciseListActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.ExerciseListActivity" />
+            android:name=".activities.MainActivity"
+            android:label="@string/title_exercise_list"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="edu.fau.group10.physicaltherapy_android.activities.MainActivity"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
-        <activity android:name=".activities.MainActivity"></activity>
     </application>
 
 </manifest>

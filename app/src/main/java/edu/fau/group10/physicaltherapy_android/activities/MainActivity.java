@@ -1,8 +1,5 @@
 package edu.fau.group10.physicaltherapy_android.activities;
 
-import android.app.ActionBar;
-
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
@@ -60,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
                     List<ApiExercises> exercisesList = response.body();
                     textView_output.setText(exercisesList.toString());
-                } else {/**/
+                } else {
                     DialogFactory.showErrorSnackBar(mContext, linlayout_main, new Throwable("failed with error code " + response.code()));
                 }
             }
